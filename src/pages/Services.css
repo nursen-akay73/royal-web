@@ -1,0 +1,461 @@
+/* Services Sayfası Stilleri */
+.services-container {
+  min-height: calc(100vh + 100px);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 239.62, 251.92) 0%,
+    rgba(205.32, 177.1, 199.67) 52.88%,
+    rgba(195.46, 164.02, 189.17) 64.9%,
+    rgba(166.69, 125.81, 158.52) 100%
+  );
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px 200px 20px; /* Alt navigasyon için boşluk */
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Ana Hizmetler Paneli */
+.services-panel {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.1),
+    0 8px 25px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  z-index: 2;
+  position: relative;
+}
+
+.services-title {
+  font-family: "Ysabeau-Regular", Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #8b5a8a;
+  text-align: center;
+  margin-bottom: 30px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.services-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-item {
+  font-family: "Ysabeau-Regular", Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #6b4c6b;
+  margin-bottom: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(139, 90, 138, 0.1);
+  transition: all 0.3s ease;
+}
+
+.service-item:hover {
+  color: #8b5a8a;
+  transform: translateX(5px);
+  border-bottom-color: rgba(139, 90, 138, 0.3);
+}
+
+.service-item:last-child {
+  border-bottom: none;
+}
+
+/* Zikzak Düzen Görselleri */
+.zigzag-images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.zigzag-images .service-image {
+  position: absolute;
+  width: 180px;
+  height: 140px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid rgba(139, 90, 138, 0.8);
+  box-shadow: 
+    0 0 20px rgba(139, 90, 138, 0.6),
+    0 0 40px rgba(139, 90, 138, 0.4),
+    0 0 60px rgba(139, 90, 138, 0.2),
+    0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.zigzag-images .service-image:hover {
+  transform: scale(1.05);
+  box-shadow: 
+    0 0 30px rgba(139, 90, 138, 0.8),
+    0 0 60px rgba(139, 90, 138, 0.6),
+    0 0 90px rgba(139, 90, 138, 0.4),
+    0 12px 35px rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(139, 90, 138, 1);
+  z-index: 10;
+}
+
+/* Sol taraf görselleri */
+.zigzag-images .left-side:nth-child(1) {
+  left: 8%;
+  top: 20%;
+}
+
+.zigzag-images .left-side:nth-child(3) {
+  left: 8%;
+  top: 50%;
+}
+
+.zigzag-images .left-side:nth-child(5) {
+  left: 8%;
+  top: 80%;
+}
+
+/* Sağ taraf görselleri */
+.zigzag-images .right-side:nth-child(2) {
+  right: 8%;
+  top: 15%;
+}
+
+.zigzag-images .right-side:nth-child(4) {
+  right: 8%;
+  top: 45%;
+}
+
+.zigzag-images .right-side:nth-child(6) {
+  right: 8%;
+  top: 75%;
+}
+
+.zigzag-images .service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  image-rendering: high-quality;
+  transition: transform 0.3s ease;
+}
+
+.zigzag-images .service-image:hover img {
+  transform: scale(1.1);
+}
+
+.service-label {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  color: #8b5a8a;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(139, 90, 138, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.zigzag-images .service-image:hover .service-label {
+  opacity: 1;
+}
+
+/* Alt İkonlar */
+.bottom-icons {
+  position: absolute;
+  bottom: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 40px;
+  z-index: 3;
+}
+
+.icon {
+  font-size: 32px;
+  color: #8b5a8a;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.icon:hover {
+  opacity: 1;
+  transform: scale(1.3);
+  color: #a67d9e;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 1200px) {
+  .zigzag-images {
+    display: none;
+  }
+  
+  .services-panel {
+    max-width: 90%;
+    padding: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-container {
+    padding: 20px 10px;
+  }
+  
+  .services-panel {
+    padding: 25px;
+  }
+  
+  .services-title {
+    font-size: 28px;
+  }
+  
+  .service-item {
+    font-size: 16px;
+  }
+  
+  .bottom-icons {
+    gap: 30px;
+    bottom: 20px;
+  }
+  
+  .icon {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-title {
+    font-size: 24px;
+  }
+  
+  .service-item {
+    font-size: 14px;
+  }
+  
+  .bottom-icons {
+    gap: 25px;
+  }
+  
+  .icon {
+    font-size: 24px;
+  }
+}
+
+/* ---- Hizmetlerimiz: simli hover ---- */
+:root {
+  --sparkle-main: #a855f7;   /* mor-500 */
+  --sparkle-deep: #7c3aed;   /* mor-600 */
+  --sparkle-light: #e9d5ff;  /* lila parıltı */
+}
+
+.services-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.services-list li {
+  /* mevcut spacing korunur; sadece metni sarmalayan anchor'a efekt verilecek */
+  margin: 0;
+  padding: 0;
+}
+
+.services-list a.sparkle-link {
+  position: relative;
+  display: block;
+  padding: 18px 0;
+  font-weight: 700;
+  text-decoration: none;
+  color: #624b6b;              /* normal metin rengi */
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+/* Parıltılı yazı: hover/focus anında gradient ile metni doldur */
+.services-list a.sparkle-link:hover,
+.services-list a.sparkle-link:focus-visible {
+  color: transparent;
+  background-image:
+    linear-gradient(90deg,
+      var(--sparkle-light) 0%,
+      var(--sparkle-main) 25%,
+      var(--sparkle-deep) 50%,
+      var(--sparkle-main) 75%,
+      var(--sparkle-light) 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+          background-clip: text;
+  animation: shimmer-move 2s ease-in-out infinite;
+  transform: translateY(-1px);
+  filter: drop-shadow(0 0 8px rgba(168,85,247,.3));
+}
+
+/* Sim taneleri */
+.services-list a.sparkle-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(233,213,255,.9) 0 2px, transparent 3px),
+    radial-gradient(circle at 80% 30%, rgba(168,85,247,.9) 0 2px, transparent 3px),
+    radial-gradient(circle at 40% 70%, rgba(124,58,237,.9) 0 2px, transparent 3px),
+    radial-gradient(circle at 60% 50%, rgba(233,213,255,.9) 0 1.5px, transparent 2px);
+  opacity: 0;
+  transform: translateY(2px);
+  transition: all 0.3s ease;
+  filter: blur(.2px);
+}
+
+.services-list a.sparkle-link:hover::after,
+.services-list a.sparkle-link:focus-visible::after {
+  opacity: .7;
+  transform: translateY(0);
+  animation: sparkles-float 3s ease-in-out infinite;
+}
+
+/* İnce alt çizgi zaten varsa dokunma; yoksa istersen çok silik bir ayırıcı kullan */
+.services-list li + li {
+  border-top: 1px solid rgba(98,75,107,.12);
+}
+
+/* Animasyonlar */
+@keyframes shimmer-move {
+  0%   { background-position: -100% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes sparkles-float {
+  0%,100% { transform: translateY(0) scale(1); }
+  50%     { transform: translateY(-1px) scale(1.05); }
+}
+
+/* Tıklama geri bildirimi */
+.services-list a.sparkle-link:active {
+  transform: translateY(0);
+  filter: drop-shadow(0 0 4px rgba(168,85,247,.18));
+}
+
+/* Hareket azaltma tercihi */
+@media (prefers-reduced-motion: reduce) {
+  .services-list a.sparkle-link,
+  .services-list a.sparkle-link::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ---- Lazer Epilasyon Alt Maddeler ---- */
+.lazer-container {
+  position: relative;
+}
+
+.lazer-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.expand-icon {
+  font-size: 18px;
+  font-weight: bold;
+  color: #8b5a8a;
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.lazer-main:hover .expand-icon {
+  transform: scale(1.2);
+}
+
+.lazer-sub-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 10px;
+  padding-left: 20px;
+  border-left: 2px solid rgba(139, 90, 138, 0.3);
+  animation: slideDown 0.3s ease-out;
+}
+
+.sub-item {
+  margin: 8px 0;
+}
+
+.sub-link {
+  font-size: 14px;
+  padding: 12px 0;
+  color: #7a5a7a;
+  position: relative;
+}
+
+.sub-link:hover,
+.sub-link:focus-visible {
+  color: transparent;
+  background-image:
+    linear-gradient(90deg,
+      var(--sparkle-light) 0%,
+      var(--sparkle-main) 25%,
+      var(--sparkle-deep) 50%,
+      var(--sparkle-main) 75%,
+      var(--sparkle-light) 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+          background-clip: text;
+  animation: shimmer-move 2s ease-in-out infinite;
+  transform: translateY(-1px);
+  filter: drop-shadow(0 0 6px rgba(168,85,247,.25));
+}
+
+.sub-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(233,213,255,.7) 0 1.5px, transparent 2px),
+    radial-gradient(circle at 80% 30%, rgba(168,85,247,.7) 0 1.5px, transparent 2px),
+    radial-gradient(circle at 40% 70%, rgba(124,58,237,.7) 0 1.5px, transparent 2px);
+  opacity: 0;
+  transform: translateY(2px);
+  transition: all 0.3s ease;
+  filter: blur(.2px);
+}
+
+.sub-link:hover::after,
+.sub-link:focus-visible::after {
+  opacity: .6;
+  transform: translateY(0);
+  animation: sparkles-float 3s ease-in-out infinite;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

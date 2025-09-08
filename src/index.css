@@ -1,0 +1,251 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(139, 90, 138, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #8b5a8a, #a67d9e);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #a67d9e, #8b5a8a);
+  box-shadow: 0 0 8px rgba(139, 90, 138, 0.4);
+}
+
+/* Firefox için scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #8b5a8a rgba(139, 90, 138, 0.1);
+}
+
+/* ---- RESET ---- */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+* { box-sizing: border-box; }
+body {
+  background: #fdeef8;   /* senin gradientin zaten içeride; burada sade arka plan */
+  overflow-x: hidden;    /* yatay scroll'u engelle */
+}
+
+/* ---- CUSTOM ANIMATIONS ---- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDelayed {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -150% 0;
+  }
+  100% {
+    background-position: 150% 0;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out;
+}
+
+.animate-fade-in-delayed {
+  animation: fadeInDelayed 2s ease-out;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* ---- PILL COMPONENT STYLES ---- */
+@keyframes sparkleBurst {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2) rotate(180deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5) rotate(360deg);
+  }
+}
+
+.pill-glow {
+  box-shadow: 
+    0 0 20px rgba(126, 34, 206, 0.4),
+    0 0 40px rgba(168, 85, 247, 0.3),
+    0 0 60px rgba(126, 34, 206, 0.2);
+  will-change: transform, box-shadow;
+}
+
+.pill-focus {
+  outline: 2px solid rgba(168, 85, 247, 0.7);
+  outline-offset: 2px;
+}
+
+.pill-sparkle {
+  position: relative;
+  overflow: hidden;
+}
+
+.pill-sparkle::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(168, 85, 247, 0.8) 50%, transparent 100%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: sparkleBurst 400ms ease-out;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.pill-sparkle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 2px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(126, 34, 206, 0.9) 50%, transparent 100%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: sparkleBurst 400ms ease-out 100ms;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* ---- GLOW BUTTON STYLES ---- */
+:root {
+  --glow: #a855f7;      /* ana mor  */
+  --glow-2: #7c3aed;    /* koyu mor */
+}
+
+.glow-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .9rem 1.4rem;
+  border-radius: 999px;
+  background: #fff;
+  color: #1f2937;
+  font-weight: 700;
+  letter-spacing: .2px;
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.glow-btn:focus-visible { 
+  box-shadow: 0 0 0 3px rgba(168,85,247,.25), 0 2px 8px rgba(0,0,0,.06);
+}
+
+.glow-btn::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(168,85,247,.20) 35%,
+    rgba(124,58,237,.25) 50%,
+    rgba(168,85,247,.20) 65%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  filter: blur(6px);
+  opacity: 0;
+  transition: opacity .25s ease;
+  pointer-events: none;
+}
+
+.glow-btn:hover {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow:
+    0 0 12px rgba(168,85,247,.35),
+    0 0 28px rgba(124,58,237,.25),
+    0 2px 8px rgba(0,0,0,.10);
+}
+
+.glow-btn:hover::before {
+  opacity: 1;
+  animation: shimmer 2.5s ease-in-out infinite;
+}
+
+
+
+
+
+.glow-btn:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow:
+    0 0 6px rgba(168,85,247,.25),
+    0 1px 4px rgba(0,0,0,.12);
+}
+
+/* Hareket azaltma tercihi */
+@media (prefers-reduced-motion: reduce) {
+  .glow-btn,
+  .glow-btn::before {
+    transition: none !important;
+    animation: none !important;
+  }
+}

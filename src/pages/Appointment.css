@@ -1,0 +1,515 @@
+/* Appointment Sayfası Stilleri */
+.appointment-container {
+  min-height: calc(100vh + 100px);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 239.62, 251.92) 0%,
+    rgba(205.32, 177.1, 199.67) 52.88%,
+    rgba(195.46, 164.02, 189.17) 64.9%,
+    rgba(166.69, 125.81, 158.52) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px 200px 20px; /* Alt navigasyon için boşluk */
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Arka Plan Görseli - Sadece orta alanda */
+.appointment-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 25%;
+  right: 25%;
+  bottom: 0;
+  background-image: url('../assets/services/5fe4a8b7-35fe-4993-9d19-450234a0dcd0.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.2;
+  z-index: 0;
+  filter: blur(0.5px);
+}
+
+/* Sol Güzellik Görseli */
+.left-beauty-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 25%;
+  height: 100vh;
+  z-index: 2;
+}
+
+.left-beauty-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  image-rendering: high-quality;
+  image-rendering: auto;
+  filter: contrast(1.1) brightness(1.05) saturate(1.1);
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Sağ Güzellik Görseli */
+.right-beauty-image {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 25%;
+  height: 100vh;
+  z-index: 2;
+}
+
+.right-beauty-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  image-rendering: high-quality;
+  image-rendering: auto;
+  filter: contrast(1.1) brightness(1.05) saturate(1.1);
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Ana Randevu Kartı */
+.appointment-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  max-width: 600px;
+  width: 100%;
+  position: relative;
+  z-index: 3;
+}
+
+.appointment-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #8b5a8a, #a67d9e, #8b5a8a);
+  border-radius: 20px 20px 0 0;
+}
+
+.appointment-title {
+  font-family: "Ysabeau-Regular", Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #8b5a8a;
+  text-align: center;
+  margin: 0 0 30px 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: 2px;
+}
+
+/* İletişim İkonları */
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.contact-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 15px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(5px);
+  border: 2px solid transparent;
+}
+
+.contact-icon:hover {
+  transform: translateY(-5px) scale(1.05);
+  background: rgba(255, 255, 255, 0.9);
+  border-color: #8b5a8a;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.contact-icon .icon {
+  font-size: 32px;
+  animation: bounce 2s infinite;
+}
+
+.contact-icon span {
+  font-family: "Ysabeau-Regular", Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #8b5a8a;
+  text-align: center;
+}
+
+/* WhatsApp özel animasyon */
+.whatsapp .icon {
+  animation: pulse 1.5s infinite;
+}
+
+/* WhatsApp logosu yeşil telefon */
+.whatsapp-logo {
+  color: #1e8142 !important;
+  font-size: 36px !important;
+  text-shadow: 0 0 10px rgba(37, 211, 102, 0.6);
+  filter: drop-shadow(0 0 8px rgba(37, 211, 102, 0.4));
+}
+
+/* Telefon özel animasyon */
+.phone .icon {
+  animation: shake 2s infinite;
+}
+
+/* Instagram özel animasyon */
+.instagram .icon {
+  animation: rotate 3s infinite linear;
+}
+
+/* Instagram logosu mor renkli */
+.instagram-logo {
+  color: #994998 !important;
+  font-size: 36px !important;
+  text-shadow: 0 0 10px rgba(139, 90, 138, 0.6);
+  filter: drop-shadow(0 0 8px rgba(139, 90, 138, 0.4));
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+  background-clip: unset !important;
+}
+
+/* Animasyonlar */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Form Stilleri */
+.appointment-form {
+  margin-top: 20px;
+}
+
+.form-title {
+  font-family: "Ysabeau-Regular", Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #8b5a8a;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-family: "Ysabeau-Regular", Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #8b5a8a;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-family: "Ysabeau-Regular", Helvetica, sans-serif;
+  font-size: 16px;
+  color: #333;
+  background: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #8b5a8a;
+  box-shadow: 0 0 0 3px rgba(139, 90, 138, 0.1);
+  background: rgba(255, 255, 255, 1);
+}
+
+.submit-button {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #8b5a8a, #a67d9e);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-family: "Ysabeau-Regular", Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.submit-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #a67d9e, #8b5a8a);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(139, 90, 138, 0.3);
+}
+
+.submit-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Alt İkonlar */
+.bottom-icons {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 40px;
+  z-index: 5;
+}
+
+/* Alt Cilt Görselleri */
+.bottom-skin-images {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  z-index: 1;
+}
+
+.skin-image-left {
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+}
+
+.skin-image-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.8) contrast(1.1);
+}
+
+.skin-image-right {
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+}
+
+.skin-image-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.8) contrast(1.1);
+}
+
+.bottom-icons .icon {
+  font-size: 28px;
+  color: #8b5a8a;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  padding: 8px;
+  backdrop-filter: blur(5px);
+}
+
+.bottom-icons .icon:hover {
+  opacity: 1;
+  transform: scale(1.3);
+  color: #a67d9e;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+  .appointment-container {
+    padding: 20px 10px;
+  }
+  
+  /* Mobilde yan görselleri gizle */
+  .left-beauty-image,
+  .right-beauty-image {
+    display: none;
+  }
+  
+  .appointment-card {
+    padding: 30px 20px;
+    max-width: 90%;
+  }
+  
+  .appointment-title {
+    font-size: 28px;
+  }
+  
+  .contact-icons {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .contact-icon {
+    padding: 12px;
+  }
+  
+  .contact-icon .icon {
+    font-size: 28px;
+  }
+  
+  .contact-icon span {
+    font-size: 12px;
+  }
+  
+  .form-title {
+    font-size: 20px;
+  }
+  
+  .form-group input,
+  .form-group select {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+  
+  .submit-button {
+    padding: 12px;
+    font-size: 16px;
+  }
+  
+  .bottom-icons {
+    gap: 30px;
+    bottom: 60px;
+  }
+  
+  .bottom-skin-images {
+    height: 50px;
+  }
+  
+  .bottom-icons .icon {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .appointment-card {
+    padding: 25px 15px;
+  }
+  
+  .appointment-title {
+    font-size: 24px;
+  }
+  
+  .contact-icons {
+    gap: 15px;
+  }
+  
+  .contact-icon {
+    padding: 10px;
+  }
+  
+  .contact-icon .icon {
+    font-size: 24px;
+  }
+  
+  .contact-icon span {
+    font-size: 11px;
+  }
+  
+  .form-title {
+    font-size: 18px;
+  }
+  
+  .form-group label {
+    font-size: 14px;
+  }
+  
+  .form-group input,
+  .form-group select {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+  
+  .submit-button {
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  .bottom-icons {
+    gap: 25px;
+  }
+  
+  .bottom-icons .icon {
+    font-size: 20px;
+  }
+}

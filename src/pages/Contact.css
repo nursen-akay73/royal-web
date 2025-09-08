@@ -1,0 +1,295 @@
+/* Contact Sayfası Stilleri */
+.contact-container {
+  min-height: calc(100vh + 100px);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 239.62, 251.92) 0%,
+    rgba(205.32, 177.1, 199.67) 52.88%,
+    rgba(195.46, 164.02, 189.17) 64.9%,
+    rgba(166.69, 125.81, 158.52) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px 200px 20px; /* Alt navigasyon için boşluk */
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Arka Plan Görseli - Sadece orta alanda */
+.contact-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 25%;
+  right: 25%;
+  bottom: 0;
+  background-image: url('../assets/services/5fe4a8b7-35fe-4993-9d19-450234a0dcd0.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.2;
+  z-index: 0;
+  filter: blur(0.5px);
+}
+
+/* Sol Güzellik Görseli */
+.left-beauty-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 25%;
+  height: 100vh;
+  z-index: 2;
+}
+
+.left-beauty-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  image-rendering: high-quality;
+  image-rendering: auto;
+  filter: contrast(1.1) brightness(1.05) saturate(1.1);
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Sağ Güzellik Görseli */
+.right-beauty-image {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 25%;
+  height: 100vh;
+  z-index: 2;
+}
+
+.right-beauty-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  image-rendering: high-quality;
+  image-rendering: auto;
+  filter: contrast(1.1) brightness(1.05) saturate(1.1);
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Ana İletişim Kartı */
+.contact-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 50px 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  z-index: 3;
+}
+
+.contact-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #8b5a8a, #a67d9e, #8b5a8a);
+  border-radius: 20px 20px 0 0;
+}
+
+.contact-title {
+  font-family: "Ysabeau-Regular", Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #8b5a8a;
+  text-align: center;
+  margin: 0 0 40px 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: 2px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.contact-icon {
+  font-size: 24px;
+  color: #8b5a8a;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.contact-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+}
+
+.contact-label {
+  font-family: "Ysabeau-Regular", Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #8b5a8a;
+  margin-bottom: 5px;
+}
+
+.contact-value {
+  font-family: "Ysabeau-Regular", Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #6b4c6b;
+  line-height: 1.4;
+}
+
+.address-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.address-line {
+  font-family: "Ysabeau-Regular", Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #6b4c6b;
+  line-height: 1.4;
+}
+
+/* Alt İkonlar */
+.bottom-icons {
+  position: absolute;
+  bottom: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 40px;
+  z-index: 5;
+}
+
+.icon {
+  font-size: 28px;
+  color: #8b5a8a;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  padding: 8px;
+  backdrop-filter: blur(5px);
+}
+
+.icon:hover {
+  opacity: 1;
+  transform: scale(1.3);
+  color: #a67d9e;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 20px 10px;
+  }
+  
+  /* Mobilde yan görselleri gizle */
+  .left-beauty-image,
+  .right-beauty-image {
+    display: none;
+  }
+  
+  .contact-card {
+    padding: 40px 30px;
+    max-width: 90%;
+  }
+  
+  .contact-title {
+    font-size: 28px;
+  }
+  
+  .contact-info {
+    gap: 25px;
+  }
+  
+  .contact-item {
+    gap: 12px;
+  }
+  
+  .contact-icon {
+    font-size: 20px;
+  }
+  
+  .contact-label,
+  .contact-value {
+    font-size: 14px;
+  }
+  
+  .address-line {
+    font-size: 13px;
+  }
+  
+  .bottom-icons {
+    gap: 30px;
+    bottom: 100px;
+  }
+  
+  .icon {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-card {
+    padding: 30px 20px;
+  }
+  
+  .contact-title {
+    font-size: 24px;
+  }
+  
+  .contact-info {
+    gap: 20px;
+  }
+  
+  .contact-label,
+  .contact-value {
+    font-size: 13px;
+  }
+  
+  .address-line {
+    font-size: 12px;
+  }
+  
+  .bottom-icons {
+    gap: 25px;
+  }
+  
+  .icon {
+    font-size: 20px;
+  }
+}
