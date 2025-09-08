@@ -41,6 +41,138 @@ body {
   overflow-x: hidden;    /* yatay scroll'u engelle */
 }
 
+/* ---- ÖZEL FARE İMLECİ ---- */
+* {
+  cursor: none !important;
+}
+
+body {
+  cursor: none !important;
+}
+
+/* Ana imleç */
+.cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, #8520e4 0%, #a855f7 50%, #7c3aed 100%);
+  border: 2px solid #8520e4;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s ease;
+  box-shadow: 0 0 10px rgba(133, 32, 228, 0.8);
+}
+
+/* İmleç takipçisi */
+.cursor-follower {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #8520e4;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transition: all 0.3s ease;
+  animation: followerPulse 4s ease-in-out infinite;
+  background: radial-gradient(circle, transparent 0%, rgba(133, 32, 228, 0.1) 100%);
+}
+
+@keyframes followerPulse {
+  0%, 100% {
+    border-color: #8520e4;
+    box-shadow: 0 0 5px rgba(133, 32, 228, 0.5);
+  }
+  50% {
+    border-color: #a855f7;
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.8);
+  }
+}
+
+/* Hover durumunda imleç */
+.cursor-hover {
+  transform: scale(1.5);
+  background: radial-gradient(circle, #8520e4 0%, #a855f7 50%, #7c3aed 100%);
+  border-color: #a855f7;
+  box-shadow: 0 0 25px rgba(133, 32, 228, 1);
+}
+
+.cursor-follower-hover {
+  transform: scale(1.2);
+  border-color: #a855f7;
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.9);
+}
+
+/* Işıltı efekti */
+@keyframes cursorShimmer {
+  0% {
+    box-shadow: 0 0 8px rgba(133, 32, 228, 0.8);
+  }
+  25% {
+    box-shadow: 0 0 15px rgba(133, 32, 228, 0.9), 0 0 25px rgba(168, 85, 247, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(133, 32, 228, 1), 0 0 40px rgba(168, 85, 247, 0.8), 0 0 60px rgba(124, 58, 237, 0.6);
+  }
+  75% {
+    box-shadow: 0 0 15px rgba(133, 32, 228, 0.9), 0 0 25px rgba(168, 85, 247, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 8px rgba(133, 32, 228, 0.8);
+  }
+}
+
+.cursor-shimmer {
+  animation: cursorShimmer 2s ease-in-out infinite;
+}
+
+/* Ek mor hareketli efektler */
+@keyframes cursorPulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    transform: scale(1.1);
+    filter: hue-rotate(10deg);
+  }
+}
+
+@keyframes cursorGlow {
+  0% {
+    box-shadow: 
+      0 0 5px rgba(133, 32, 228, 0.5),
+      0 0 10px rgba(168, 85, 247, 0.3);
+  }
+  50% {
+    box-shadow: 
+      0 0 15px rgba(133, 32, 228, 0.8),
+      0 0 30px rgba(168, 85, 247, 0.6),
+      0 0 45px rgba(124, 58, 237, 0.4);
+  }
+  100% {
+    box-shadow: 
+      0 0 5px rgba(133, 32, 228, 0.5),
+      0 0 10px rgba(168, 85, 247, 0.3);
+  }
+}
+
+.cursor {
+  animation: cursorPulse 3s ease-in-out infinite, cursorGlow 2.5s ease-in-out infinite;
+}
+
+/* Mobil cihazlarda normal imleç */
+@media (max-width: 768px) {
+  * {
+    cursor: auto !important;
+  }
+  
+  .cursor,
+  .cursor-follower {
+    display: none;
+  }
+}
+
 /* ---- CUSTOM ANIMATIONS ---- */
 @keyframes fadeIn {
   from {
