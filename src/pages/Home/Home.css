@@ -72,8 +72,8 @@
   -webkit-backface-visibility: hidden;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
-  filter: contrast(1.2) brightness(1.1) saturate(1.2) sharpness(1.5);
-  -webkit-filter: contrast(1.2) brightness(1.1) saturate(1.2) sharpness(1.5);
+  filter: contrast(1.2) brightness(1.1) saturate(1.2);
+  -webkit-filter: contrast(1.2) brightness(1.1) saturate(1.2);
 }
 
 /* Sağ Fotoğraf */
@@ -102,8 +102,8 @@
   -webkit-backface-visibility: hidden;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
-  filter: contrast(1.2) brightness(1.1) saturate(1.2) sharpness(1.5);
-  -webkit-filter: contrast(1.2) brightness(1.1) saturate(1.2) sharpness(1.5);
+  filter: contrast(1.2) brightness(1.1) saturate(1.2);
+  -webkit-filter: contrast(1.2) brightness(1.1) saturate(1.2);
 }
 
 

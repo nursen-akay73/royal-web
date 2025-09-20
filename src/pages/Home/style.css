@@ -1,0 +1,431 @@
+.frame {
+  align-items: start;
+  background-color: rgba(255, 255, 255, 1);
+  display: grid;
+  justify-items: center;
+  width: 100vw;
+}
+
+.frame .div {
+  background: linear-gradient(
+    180deg,
+    rgb(255, 239.62, 251.92) 0%,
+    rgb(205.32, 177.1, 199.67) 52.88%,
+    rgb(195.46, 164.02, 189.17) 64.9%,
+    rgb(166.69, 125.81, 158.52) 100%
+  );
+  background-color: rgba(255, 255, 255, 1);
+  height: 1080px;
+  overflow: hidden;
+  position: relative;
+  width: 1920px;
+}
+
+.frame .overlap {
+  height: 92px;
+  left: -149px;
+  position: absolute;
+  top: -525px;
+  width: 1030px;
+}
+
+.frame .overlap-group {
+  height: 92px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 1030px;
+}
+
+.frame .arrow {
+  height: 11px;
+  left: 0;
+  position: absolute;
+  top: 80px;
+  width: 1030px;
+}
+
+.frame .person-fill {
+  height: 92px;
+  left: 347px;
+  position: absolute;
+  top: 0;
+  width: 92px;
+}
+
+.frame .line-md-home-md {
+  height: 61px;
+  left: 12px;
+  position: absolute;
+  top: 18px;
+  width: 61px;
+}
+
+.frame .subway-calendar {
+  height: 38px;
+  left: 749px;
+  position: absolute;
+  top: 26px;
+  width: 38px;
+}
+
+.frame .mdi-spa-outline {
+  height: 64px;
+  left: 41px;
+  position: absolute;
+  top: -433px;
+  width: 64px;
+}
+
+.frame .et-phone {
+  height: 64px;
+  left: 487px;
+  position: absolute;
+  top: -433px;
+  width: 38px;
+}
+
+.frame .overlap-2 {
+  height: 1037px;
+  left: 405px;
+  position: absolute;
+  top: -286px;
+  width: 1091px;
+}
+
+.frame .overlap-group-2 {
+  height: 1037px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 934px;
+}
+
+.frame .button {
+  all: unset;
+  align-items: center;
+  background-color: #ffffff;
+  border: 4px solid;
+  border-color: #a67d9e;
+  border-radius: 32px;
+  box-shadow: inset 0px 1px 0px #f3fd69, 0px 18px 56px #00000065, 0px 10px 18px #00000032, 0px 4px 6px #00000028;
+  box-sizing: border-box;
+  display: flex;
+  gap: 8px;
+  height: 64px;
+  left: 491px;
+  opacity: 0.8;
+  overflow: hidden;
+  padding: 6px 12px;
+  position: absolute;
+  top: 314px;
+  width: 195px;
+}
+
+.frame .spring {
+  background-color: #a67d9e;
+  filter: blur(32px);
+  height: 84px;
+  left: -35px;
+  position: absolute;
+  top: 10px;
+  transform: rotate(-45deg);
+  width: 25px;
+}
+
+.frame .add {
+  height: 16px;
+  position: relative;
+  width: 16px;
+}
+
+.frame .text-wrapper {
+  all: unset;
+  box-sizing: border-box;
+  color: #000000;
+  font-family: var(--text-font-family);
+  font-size: var(--text-font-size);
+  font-style: var(--text-font-style);
+  font-weight: var(--text-font-weight);
+  letter-spacing: var(--text-letter-spacing);
+  line-height: var(--text-line-height);
+  margin-bottom: -54px;
+  margin-top: -62px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.frame .button-2 {
+  align-items: center;
+  background-color: #f8eaf5;
+  border: 4px solid;
+  border-radius: 32px;
+  box-shadow: inset 0px 1px 0px #f3fd69, 0px 18px 56px #00000065, 0px 10px 18px #00000032, 0px 4px 6px #00000028;
+  display: flex;
+  gap: 8px;
+  height: 265px;
+  left: 367px;
+  overflow: hidden;
+  padding: 6px 12px;
+  position: absolute;
+  top: 772px;
+  width: 567px;
+}
+
+.frame .spring-2 {
+  background-color: #fddaf6;
+  filter: blur(32px);
+  height: 169px;
+  left: 18px;
+  position: absolute;
+  top: -59px;
+  transform: rotate(-5.12deg);
+  width: 465px;
+}
+
+.frame .button-3 {
+  all: unset;
+  box-sizing: border-box;
+  color: #000000;
+  font-family: "Vujahday Script-Regular", Helvetica;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 25.2px;
+  position: relative;
+  text-decoration: underline;
+  width: 47px;
+}
+
+.frame .header {
+  color: #000000;
+  font-family: var(--header-3-font-family);
+  font-size: var(--header-3-font-size);
+  font-style: var(--header-3-font-style);
+  font-weight: var(--header-3-font-weight);
+  left: 677px;
+  letter-spacing: var(--header-3-letter-spacing);
+  line-height: var(--header-3-line-height);
+  position: absolute;
+  top: 807px;
+  width: 8px;
+}
+
+.frame .burada-her-ayr-nt-s {
+  color: #000000;
+  font-family: "Ysabeau-Regular", Helvetica;
+  font-size: 32px;
+  font-weight: 400;
+  left: 408px;
+  letter-spacing: -0.64px;
+  line-height: 34px;
+  position: absolute;
+  top: 807px;
+  width: 490px;
+}
+
+.frame .ac-af-e {
+  height: 826px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 551px;
+}
+
+.frame .button-4 {
+  all: unset;
+  align-items: center;
+  background-color: #ffffff;
+  border: 4px solid;
+  border-color: #a67d9e;
+  border-radius: 32px;
+  box-shadow: inset 0px 1px 0px #f3fd69, 0px 18px 56px #00000065, 0px 10px 18px #00000032, 0px 4px 6px #00000028;
+  box-sizing: border-box;
+  display: flex;
+  gap: 8px;
+  height: 66px;
+  left: 687px;
+  overflow: hidden;
+  padding: 6px 12px;
+  position: absolute;
+  top: 405px;
+  width: 256px;
+}
+
+.frame .button-5 {
+  all: unset;
+  box-sizing: border-box;
+  color: #000000;
+  font-family: var(--text-font-family);
+  font-size: var(--text-font-size);
+  font-style: var(--text-font-style);
+  font-weight: var(--text-font-weight);
+  letter-spacing: var(--text-letter-spacing);
+  line-height: var(--text-line-height);
+  margin-bottom: -53px;
+  margin-top: -61px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.frame .button-6 {
+  all: unset;
+  align-items: center;
+  background-color: #ffffff;
+  border: 4px solid;
+  border-color: #a67d9e;
+  border-radius: 32px;
+  box-shadow: inset 0px 1px 0px #f3fd69, 0px 18px 56px #00000065, 0px 10px 18px #00000032, 0px 4px 6px #00000028;
+  box-sizing: border-box;
+  display: flex;
+  gap: 8px;
+  height: 64px;
+  left: 878px;
+  overflow: hidden;
+  padding: 6px 12px;
+  position: absolute;
+  top: 305px;
+  width: 213px;
+}
+
+.frame .button-7 {
+  all: unset;
+  align-items: center;
+  background-color: #ffffff;
+  border: 4px solid;
+  border-color: #a67d9e;
+  border-radius: 32px;
+  box-shadow: inset 0px 1px 0px #f3fd69, 0px 18px 56px #00000065, 0px 10px 18px #00000032, 0px 4px 6px #00000028;
+  box-sizing: border-box;
+  display: flex;
+  gap: 8px;
+  height: 64px;
+  left: 1512px;
+  overflow: hidden;
+  padding: 6px 12px;
+  position: absolute;
+  top: 117px;
+  width: 195px;
+}
+
+.frame .button-8 {
+  all: unset;
+  align-items: center;
+  background-color: #ffffff;
+  border: 4px solid;
+  border-color: #a67d9e;
+  border-radius: 32px;
+  box-shadow: inset 0px 1px 0px #f3fd69, 0px 18px 56px #00000065, 0px 10px 18px #00000032, 0px 4px 6px #00000028;
+  box-sizing: border-box;
+  display: flex;
+  gap: 8px;
+  height: 64px;
+  left: 1631px;
+  overflow: hidden;
+  padding: 6px 12px;
+  position: absolute;
+  top: 28px;
+  width: 204px;
+}
+
+.frame .button-9 {
+  all: unset;
+  box-sizing: border-box;
+  color: #000000;
+  font-family: var(--text-font-family);
+  font-size: var(--text-font-size);
+  font-style: var(--text-font-style);
+  font-weight: var(--text-font-weight);
+  letter-spacing: var(--text-letter-spacing);
+  line-height: var(--text-line-height);
+  margin-bottom: -54px;
+  margin-right: -1px;
+  margin-top: -62px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.frame .div-2 {
+  align-items: flex-start;
+  display: inline-flex;
+  left: 1584px;
+  opacity: 0.1;
+  position: absolute;
+  top: 793px;
+  transform: rotate(-22.99deg);
+}
+
+.frame .div-3 {
+  align-items: flex-start;
+  display: inline-flex;
+  flex: 0 0 auto;
+  margin-left: -249.69px;
+  position: relative;
+  transform: rotate(-90deg);
+}
+
+.frame .PARTICALS {
+  height: 600.61px;
+  margin-right: -1447.49px;
+  margin-top: -1025.9px;
+  position: relative;
+  transform: rotate(112.99deg);
+  width: 549.99px;
+}
+
+.frame .img {
+  height: 243.31px;
+  margin-right: -257.26px;
+  position: relative;
+  transform: rotate(112.99deg);
+  width: 503.1px;
+}
+
+.frame .div-4 {
+  align-items: flex-start;
+  display: inline-flex;
+  flex: 0 0 auto;
+  margin-right: -249.69px;
+  position: relative;
+  transform: rotate(90deg);
+}
+
+.frame .PARTICALS-2 {
+  height: 600.61px;
+  margin-bottom: -1626.51px;
+  margin-left: -1447.48px;
+  position: relative;
+  transform: rotate(-67.01deg);
+  width: 549.99px;
+}
+
+.frame .PARTICALS-3 {
+  height: 600.61px;
+  margin-bottom: -1626.51px;
+  margin-left: -1447.49px;
+  position: relative;
+  transform: rotate(-67.01deg);
+  width: 549.99px;
+}
+
+.frame .ec-dc-d {
+  height: 1075px;
+  left: -960px;
+  object-fit: cover;
+  position: absolute;
+  top: -535px;
+  width: 716px;
+}
+
+.frame .https-lottiefiles {
+  height: 150px;
+  left: 201px;
+  object-fit: cover;
+  position: absolute;
+  top: 111px;
+  width: 150px;
+}
