@@ -35,6 +35,11 @@ html, body, #root {
   margin: 0;
   padding: 0;
 }
+
+.app {
+  min-height: 100vh;
+  position: relative;
+}
 * { box-sizing: border-box; }
 body {
   background: #fdeef8;   /* senin gradientin zaten içeride; burada sade arka plan */

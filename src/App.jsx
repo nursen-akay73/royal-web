@@ -69,14 +69,16 @@ export default function App() {
   
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/hakkimizda" element={<About />} />
-        <Route path="/hizmetler" element={<Services />} />
-        <Route path="/randevu-al" element={<Appointment />} />
-        <Route path="/iletisim" element={<Contact />} />
-      </Routes>
-      <BottomNav />
+      <div className="app">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/hakkimizda" element={<About />} />
+          <Route path="/hizmetler" element={<Services />} />
+          <Route path="/randevu-al" element={<Appointment />} />
+          <Route path="/iletisim" element={<Contact />} />
+        </Routes>
+        <BottomNav />
+      </div>
     </BrowserRouter>
   );
 }
