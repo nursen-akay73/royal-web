@@ -371,9 +371,26 @@
 }
 
 .lazer-main {
+  display: inline-block;
+}
+
+.lazer-container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 10px;
+}
+
+.lazer-expand-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.lazer-expand-btn:hover {
+  background: rgba(139, 90, 138, 0.1);
 }
 
 .expand-icon {
@@ -459,3 +476,4 @@
     transform: translateY(0);
   }
 }
+

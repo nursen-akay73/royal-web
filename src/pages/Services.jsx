@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./Services.css";
+import { SERVICE_BENEFITS } from "../data/serviceBenefits";
+import ServiceBenefitsModal from "../components/ServiceBenefitsModal";
 
 // Services görsellerini import et - mevcut dosyalar
 import lazerEpilasyon from "../assets/services/b1eb4735-9083-4939-96a6-4ad3f6ecce6c.png";
@@ -15,6 +17,7 @@ import dermapen from "../assets/services/d07db763-4ac0-44a3-872d-67ccfd95afbd.pn
 
 export default function Services() {
   const [showLazerSubItems, setShowLazerSubItems] = useState(false);
+  const [selectedService, setSelectedService] = useState(null);
 
   const services = [
     "LAZER EPİLASYON",
@@ -39,6 +42,19 @@ export default function Services() {
     e.preventDefault();
     setShowLazerSubItems(!showLazerSubItems);
   };
+
+  const handleServiceClick = (serviceName, e) => {
+    e.preventDefault();
+    const serviceData = SERVICE_BENEFITS[serviceName];
+    if (serviceData) {
+      setSelectedService(serviceData);
+    }
+  };
+
+  const handleCloseModal = () => {
+    setSelectedService(null);
+  };
+
 
   // Zikzak düzen için görselleri eşleştir - görseldeki sıralamaya göre
   const serviceImages = [
@@ -65,16 +81,28 @@ export default function Services() {
                     href="#" 
                     role="button" 
                     aria-label={`${service} hizmeti`}
-                    onClick={handleLazerClick}
+                    onClick={(e) => handleServiceClick(service, e)}
                   >
                     {service}
-                    <span className="expand-icon">{showLazerSubItems ? '−' : '+'}</span>
                   </a>
+                  <button 
+                    className="lazer-expand-btn"
+                    onClick={handleLazerClick}
+                    aria-label="Alt hizmetleri göster"
+                  >
+                    <span className="expand-icon">{showLazerSubItems ? '−' : '+'}</span>
+                  </button>
                   {showLazerSubItems && (
                     <ul className="lazer-sub-items">
                       {lazerSubItems.map((subItem, subIndex) => (
                         <li key={subIndex} className="sub-item">
-                          <a className="sparkle-link sub-link" href="#" role="button" aria-label={`${subItem} hizmeti`}>
+                          <a 
+                            className="sparkle-link sub-link" 
+                            href="#" 
+                            role="button" 
+                            aria-label={`${subItem} hizmeti`}
+                            onClick={(e) => handleServiceClick(subItem, e)}
+                          >
                             {subItem}
                           </a>
                         </li>
@@ -83,7 +111,13 @@ export default function Services() {
                   )}
                 </div>
               ) : (
-                <a className="sparkle-link" href="#" role="button" aria-label={`${service} hizmeti`}>
+                <a 
+                  className="sparkle-link" 
+                  href="#" 
+                  role="button" 
+                  aria-label={`${service} hizmeti`}
+                  onClick={(e) => handleServiceClick(service, e)}
+                >
                   {service}
                 </a>
               )}
@@ -137,6 +171,13 @@ export default function Services() {
         <div className="icon">🧴</div>
         <div className="icon">✂️</div>
       </div>
+
+      {/* Service Benefits Modal */}
+      <ServiceBenefitsModal 
+        isOpen={!!selectedService}
+        onClose={handleCloseModal}
+        serviceData={selectedService}
+      />
     </div>
   );
 }

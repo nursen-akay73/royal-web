@@ -264,36 +264,86 @@
   padding: 12px 24px;
 }
 
-/* Metin Balonu */
+/* Metin Balonu - Oval/Elips Şekli */
 .text-bubble {
   position: absolute;
-  left: 20%;
-  top: 80%;
-  transform: translateY(-50%);
-  width: 60%;
-  background: rgba(248, 234, 245, 0.95);
-  padding: 25px;
-  border-radius: 20px;
-  box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.15);
-  z-index: 3;
+  left: 50%;
+  top: 75%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  max-width: 800px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px 40px;
+  border-radius: 50px;
+  box-shadow: 
+    0px 20px 60px rgba(0, 0, 0, 0.2),
+    0px 8px 25px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+/* Simli efekt için pseudo-element */
+.text-bubble::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.3) 0 2px, transparent 3px),
+    radial-gradient(circle at 80% 30%, rgba(168, 85, 247, 0.2) 0 1.5px, transparent 2px),
+    radial-gradient(circle at 40% 70%, rgba(124, 58, 237, 0.2) 0 1px, transparent 1.5px);
+  animation: sparkleFloat 4s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes sparkleFloat {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.8;
+  }
 }
 
 .text-bubble p {
-  color: #000000;
-  font-family: 'Arial', sans-serif;
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 28px;
+  color: #8b5a8a !important;
+  font-family: 'Ysabeau-Regular', 'Arial', sans-serif;
+  font-size: 20px !important;
+  font-weight: 500;
+  line-height: 1.4;
   text-align: center;
   margin: 0;
-  letter-spacing: -0.64px;
+  letter-spacing: 0.5px;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .text-bubble .brush-icon {
   position: absolute;
-  bottom: 10px;
-  right: 15px;
-  font-size: 20px;
+  bottom: 15px;
+  right: 20px;
+  font-size: 24px;
+  z-index: 2;
+  animation: brushFloat 3s ease-in-out infinite;
+}
+
+@keyframes brushFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-3px) rotate(5deg);
+  }
 }
 
 /* Alt Metin Şeridi */
@@ -327,10 +377,14 @@
   }
   
   .text-bubble {
-    width: 60%;
-    left: 20%;
-    font-size: 24px;
-    padding: 25px;
+    width: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px 40px;
+  }
+  
+  .text-bubble p {
+    font-size: 18px;
   }
   
   .logo h1 {
@@ -345,10 +399,14 @@
   }
   
   .text-bubble {
-    width: 70%;
-    left: 15%;
-    font-size: 20px;
-    padding: 20px;
+    width: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 25px 35px;
+  }
+  
+  .text-bubble p {
+    font-size: 16px;
   }
   
   .nav-button {
@@ -373,9 +431,13 @@
   
   .text-bubble {
     width: 90%;
-    left: 5%;
-    font-size: 18px;
-    padding: 15px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 25px;
+  }
+  
+  .text-bubble p {
+    font-size: 14px;
   }
   
   .nav-button {
